@@ -47,14 +47,14 @@ public class EmployeeService {
         return employees.values()
                 .stream()
                 .min(Comparator.comparingInt(Employee::getSalary))
-                .get();
+                .orElse(null);
     }
 
     public Employee getEmployeeWithMaxSalary() {
         return employees.values()
                 .stream()
                 .max(Comparator.comparingInt(Employee::getSalary))
-                .get();
+                .orElse(null);
     }
 
     public Map<Integer, Employee> getEmployeesWithSalaryMoreAverage() {
