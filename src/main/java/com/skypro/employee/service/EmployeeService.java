@@ -39,8 +39,8 @@ public class EmployeeService {
                 .sum();
     }
 
-    public int getSalaryAverage() {
-        return !employees.isEmpty() ? getSalarySum() / employees.size() : 0;
+    public double getSalaryAverage() {
+        return !employees.isEmpty() ? (double) getSalarySum() / employees.size() : 0;
     }
 
     public Employee getEmployeeWithMinSalary() {

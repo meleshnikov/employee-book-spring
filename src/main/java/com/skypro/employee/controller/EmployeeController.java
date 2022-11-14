@@ -36,7 +36,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/salary/average")
-    public int getSalaryAverage() {
+    public double getSalaryAverage() {
         return this.employeeService.getSalaryAverage();
     }
 
