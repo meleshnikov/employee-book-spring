@@ -4,10 +4,7 @@ import com.skypro.employee.model.Employee;
 import com.skypro.employee.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -57,10 +54,10 @@ public class EmployeeService {
                 .orElse(null);
     }
 
-    public Map<Integer, Employee> getEmployeesWithSalaryMoreAverage() {
+    public List<Employee> getEmployeesWithSalaryMoreAverage() {
         return employees.values()
                 .stream().filter(e -> e.getSalary() > getSalaryAverage())
-                .collect(Collectors.toMap(Employee::getId, Function.identity()));
+                .collect(Collectors.toList());
     }
 
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.Map;
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -51,7 +51,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/high-salary")
-    public Map<Integer, Employee> getEmployeesWithSalaryMoreAverage() {
+    public List<Employee> getEmployeesWithSalaryMoreAverage() {
         return this.employeeService.getEmployeesWithSalaryMoreAverage();
     }
 
