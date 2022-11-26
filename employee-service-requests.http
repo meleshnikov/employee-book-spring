@@ -6,10 +6,10 @@ POST http://localhost:8080/employee
 Content-Type: application/json
 
 {
-  "firstName": "test",
-  "lastName": "test",
-  "department": 1,
-  "salary": 1000
+  "firstName": "gfgvvasddsn",
+  "lastName": "ddfcanweov",
+  "department": 3,
+  "salary": 50000
 }
 
 ### Создать сотрудника2
@@ -17,10 +17,10 @@ POST http://localhost:8080/employee
 Content-Type: application/json
 
 {
-  "firstName": "test2",
-  "lastName": "test2",
+  "firstName": "Petr",
+  "lastName": "Petrov",
   "department": 2,
-  "salary": 1600
+  "salary": 100000
 }
 
 ### Получить сумму зарплат сотрудников
@@ -37,3 +37,25 @@ GET http://localhost:8080/employee/salary/max
 
 ### Получить всех сотрудников, зарплата которых больше средней зарплаты
 GET http://localhost:8080/employee/high-salary
+
+### Найти сотрудника по id
+GET http://localhost:8080/employee/find/2
+
+### Удалить сотрудника по id
+GET http://localhost:8080/employee/remove/2
+
+
+### Получить список всех сотрудников по департаменту
+GET http://localhost:8080/department/employees?department=1
+
+### Получить сумму зарплат по департаменту
+GET http://localhost:8080/department/1/salary/sum
+
+### Получить минимальную зарплату по департаменту
+GET http://localhost:8080/department/1/salary/min
+
+### Получить максимальную зарплату по департаменту
+GET http://localhost:8080/department/1/salary/max
+
+### Получить сотрудников сгруппированых по отделам
+GET http://localhost:8080/department/grouped
