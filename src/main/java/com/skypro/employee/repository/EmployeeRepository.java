@@ -1,15 +1,14 @@
 package com.skypro.employee.repository;
 
 import com.skypro.employee.model.Employee;
-import com.skypro.employee.record.EmployeeRequest;
 
 import java.util.Collection;
 
 public interface EmployeeRepository {
 
-    Employee add(EmployeeRequest employeeRequest);
+    Employee add(Employee employee);
 
-    String remove(int id);
+    Employee remove(int id);
 
     Employee find(int id);
 

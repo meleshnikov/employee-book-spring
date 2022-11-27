@@ -58,12 +58,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/find/{id}")
-    public Employee findEmployeeById(@PathVariable int id) {
+    public Employee findEmployeeById(@PathVariable int id) throws EmployeeNotExistException {
         return this.employeeService.findEmployeeById(id);
     }
 
     @GetMapping("/remove/{id}")
-    public String removeEmployeeById(@PathVariable int id) {
+    public String removeEmployeeById(@PathVariable int id) throws EmployeeNotExistException {
         return this.employeeService.removeEmployeeById(id);
     }
 
