@@ -2,7 +2,7 @@ package com.skypro.employee.model;
 
 import java.util.Objects;
 
-public class Employee implements Comparable<Integer> {
+public class Employee {
     private static int counter;
     private final int id;
     private final String firstName;
@@ -62,8 +62,4 @@ public class Employee implements Comparable<Integer> {
                 getSalary());
     }
 
-    @Override
-    public int compareTo(Integer o) {
-        return Integer.valueOf(id).compareTo(o);
-    }
 }
