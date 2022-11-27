@@ -1,6 +1,6 @@
 package com.skypro.employee.controller;
 
-import com.skypro.employee.exception.EmployeeNotFoundException;
+import com.skypro.employee.exception.EmployeeNotExistException;
 import com.skypro.employee.exception.InvalidNameException;
 import com.skypro.employee.model.Employee;
 import com.skypro.employee.record.EmployeeRequest;
@@ -63,8 +63,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/remove/{id}")
-    public void removeEmployeeById(@PathVariable int id) {
-        this.employeeService.removeEmployeeById(id);
+    public String removeEmployeeById(@PathVariable int id) {
+        return this.employeeService.removeEmployeeById(id);
     }
 
     @ExceptionHandler(InvalidNameException.class)
@@ -72,8 +72,8 @@ public class EmployeeController {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(EmployeeNotFoundException.class)
-    public ResponseEntity<Object> employeeNotFoundException(EmployeeNotFoundException e) {
+    @ExceptionHandler(EmployeeNotExistException.class)
+    public ResponseEntity<Object> employeeNotFoundException(EmployeeNotExistException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 

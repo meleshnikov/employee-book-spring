@@ -1,18 +1,18 @@
 package com.skypro.employee.repository;
 
 import com.skypro.employee.model.Employee;
-import org.springframework.stereotype.Repository;
+import com.skypro.employee.record.EmployeeRequest;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Collection;
 
-@Repository
-public class EmployeeRepository {
+public interface EmployeeRepository {
 
-    private final Map<Integer, Employee> employees = new HashMap<>();
+    Employee add(EmployeeRequest employeeRequest);
 
-    public Map<Integer, Employee> getEmployees() {
-        return employees;
-    }
+    String remove(int id);
+
+    Employee find(int id);
+
+    Collection<Employee> getAll();
 
 }

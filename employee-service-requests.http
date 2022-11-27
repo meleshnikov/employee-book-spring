@@ -55,7 +55,7 @@ GET http://localhost:8080/department/1/salary/sum
 GET http://localhost:8080/department/1/salary/min
 
 ### Получить максимальную зарплату по департаменту
-GET http://localhost:8080/department/1/salary/max
+GET http://localhost:8080/department/3/salary/max
 
 ### Получить сотрудников сгруппированых по отделам
 GET http://localhost:8080/department/grouped
